@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "esnext", // 目标代码-->js (esnext->es6以后)
+    "module": "esnext", // 目标代码需要使用的模块化方案 esmodule umd
+    "strict": true,     // 严格模式
+    "jsx": "preserve",  // 是否对jsx做什么样的处理 preserve保留，不转换   其实babel会做转换
+    "importHelpers": true,//辅助的导入功能
+    "moduleResolution": "node", // 按照node的规则去查找模块
+    "skipLibCheck": true,       // 跳过对我们一些库的类型检查
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true, // 要不要生成映射文件(ts->js)
+    "baseUrl": ".", // 文件路径在解析的时候基本url
+    "types": ["webpack-env"], // "element-plus/global" 指定具体解析使用的类型
+    "paths": { // 解析对应的路径
+      "@/*": ["src/*"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"] // 可以使用哪些库的类型
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": ["node_modules"]
+}
